@@ -1,0 +1,9 @@
+Our main responsibilities in DevOps include:
+
+Creating Infrastructure: Setting up and managing the servers and environments needed for applications to run, often using tools like Terraform or CloudFormation.
+
+Configuration Management: Installing and managing software and tools on multiple servers using tools like Ansible to ensure consistency across all environments.
+
+Continuous Integration and Continuous Deployment (CI/CD): Automating the process of integrating code changes and deploying applications using Jenkins. This process involves using Git and GitHub for version control, SonarQube for code quality checks, Docker for containerization, and Kubernetes for managing containerized applications.
+
+Monitoring: Ensuring applications and infrastructure are running smoothly by using monitoring tools like Prometheus.
