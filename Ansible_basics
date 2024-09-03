@@ -1,0 +1,57 @@
+Ansible is a configuration management tool.
+It allows you to install software like Nginx, HTTPD, or any other package on all the available servers in your infrastructure. Here’s how you can use Ansible to install Nginx on multiple servers:
+
+Step 1: Set Up Ansible on the Master Server
+If you are using an AWS Ubuntu instance as a master:
+
+Update the package list:
+
+bash
+Copy code
+sudo apt update
+Install Ansible:
+
+bash
+Copy code
+sudo apt install ansible -y
+Verify the installation:
+
+bash
+Copy code
+ansible --version
+Step 2: Set Up Passwordless SSH Authentication and Inventory
+To communicate with other servers, set up passwordless SSH authentication:
+
+Create an inventory file (e.g., inventory.yml):
+
+yaml
+Copy code
+[servers]
+server1 ansible_host=ipaddress1
+server2 ansible_host=ipaddress2
+
+[all:vars]
+ansible_private_key_file=/path/to/your/pemfile.pem
+Replace ipaddress1 and ipaddress2 with the actual IP addresses of your servers.
+Ensure that the path to your PEM file is correct and accessible.
+Create a playbook file (e.g., playbook.yml):
+
+- name: Install Nginx on all servers
+  hosts: all
+  become: true
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: latest
+        
+    - name: Start and enable Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+This playbook will install Nginx on all servers defined in your inventory file, start the service, and enable it to start on boot.
+Step 3: Run the Ansible Playbook
+Run the playbook using the following command:
+ansible-playbook -i inventory.yml playbook.yml
+The -i flag specifies the inventory file.
