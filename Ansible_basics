@@ -5,27 +5,18 @@ Step 1: Set Up Ansible on the Master Server
 If you are using an AWS Ubuntu instance as a master:
 
 Update the package list:
-
-bash
-Copy code
 sudo apt update
+
 Install Ansible:
-
-bash
-Copy code
 sudo apt install ansible -y
-Verify the installation:
 
-bash
-Copy code
+Verify the installation:
 ansible --version
+
 Step 2: Set Up Passwordless SSH Authentication and Inventory
 To communicate with other servers, set up passwordless SSH authentication:
 
 Create an inventory file (e.g., inventory.yml):
-
-yaml
-Copy code
 [servers]
 server1 ansible_host=ipaddress1
 server2 ansible_host=ipaddress2
@@ -34,6 +25,7 @@ server2 ansible_host=ipaddress2
 ansible_private_key_file=/path/to/your/pemfile.pem
 Replace ipaddress1 and ipaddress2 with the actual IP addresses of your servers.
 Ensure that the path to your PEM file is correct and accessible.
+
 Create a playbook file (e.g., playbook.yml):
 
 - name: Install Nginx on all servers
@@ -55,3 +47,9 @@ Step 3: Run the Ansible Playbook
 Run the playbook using the following command:
 ansible-playbook -i inventory.yml playbook.yml
 The -i flag specifies the inventory file.
+
+step 4 : Verify the Installation
+After the playbook has run successfully, you can verify that Nginx is installed and running on all your servers:
+Check Nginx Status:
+ssh user@server_ip "systemctl status nginx"
+ 
