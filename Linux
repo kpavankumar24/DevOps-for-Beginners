@@ -1,0 +1,43 @@
+Linux:
+
+Compute refers to the processing power provided by resources like RAM (memory), CPU (Central Processing Unit), and GPU (Graphics Processing Unit). Any cloud provider can offer these resources, but to make them functional and utilize them effectively, we need an operating system (OS).
+
+We often use Linux as the OS because it is open-source, highly customizable, and has a powerful command-line interface (CLI), making it ideal for a wide range of applications and environments.
+
+Every OS has a kernel, which acts as a bridge between software and hardware. The kernel manages hardware resources such as CPU, memory, and storage, and allocates them to various applications as needed. For example, if you install a game on your computer, the kernel is responsible for providing the necessary CPU processing power and memory (RAM) to run the game smoothly.
+
+The relationship can be visualized as:
+
+User → OS → Kernel → Hardware
+
+The user interacts with the operating system, which in turn communicates with the kernel. The kernel then manages the hardware resources to ensure that everything functions properly.
+
+
+
+Basic Linux Commands:
+
+touch [filename]: Creates an empty file. If the file already exists, it updates the file's timestamp.
+
+rm [filename]: Removes (deletes) a file.
+
+mkdir [foldername]: Creates a new directory (folder).
+
+rm -r [foldername]: Removes a directory and its contents recursively.
+
+ls: Lists files and directories in the current directory.
+
+ls -a: Lists all files, including hidden files (those starting with a dot).
+
+ls -la: Lists files and directories with detailed information, including permissions, owner, size, and modification date.
+
+cd [foldername]: Changes the current directory to the specified folder. Use cd .. to move up one directory level, and cd (without arguments) to return to your home directory.
+
+pwd: Prints the current working directory, showing the full path to your current location.
+
+vi [filename] or vim [filename]: Opens the file in the vi or vim editor.
+
+  vi or vim commands:
+   i: Switches to insert mode, allowing you to write text.
+ ESC: Exits insert mode and returns to command mode.
+ :wq: Saves the file and exits the editor.
+
