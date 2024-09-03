@@ -1,0 +1,38 @@
+Intro to Git and GitHub:
+
+Git is a source code management (SCM) tool that helps developers track changes to their code over time. It allows developers to create a local repository on their own machine where they can store and manage their code. 
+Git provides powerful features for version control, branching, and merging, making it easier to collaborate and manage code changes.
+
+GitHub is a web-based platform that hosts Git repositories online. It allows developers to share their local Git repositories with others by pushing their code to a central repository on GitHub. GitHub provides 
+additional collaboration features such as pull requests, code reviews, issue tracking, and project management tools.
+
+Analogy: Think of Git as a way to store your pictures on your phone. You can keep them organized, edit them, and view your collection locally. GitHub, on the other hand, is like sharing those pictures via apps 
+like WhatsApp or Facebook. It lets you upload and share your pictures (code) with others, making it easy to collaborate and get feedback.
+
+In summary:
+
+Git: Local source code management tool.
+GitHub: Platform for sharing and collaborating on Git repositories.
+
+Git Commands:
+
+git config: Configures your Git settings. You can set your username and email that will be associated with your commits.
+
+Example: git config --global user.name "Your Name"
+Example: git config --global user.email "your.email@example.com"
+git clone [repository URL]: Clones a remote repository (like GitHub) to your local machine, creating a local copy of the code.
+
+Example: git clone https://github.com/username/repository.git
+git status: Displays the current status of your Git repository. It shows:
+
+Modified files (files that have been changed since the last commit).
+Untracked files (new files that are not yet being tracked by Git).
+git add .: Stages all changes (new files, modified files) for the next commit. The . means "add everything in the current directory and subdirectories".
+
+Example: git add .
+git commit -m "Your commit message": Commits the staged changes to your local repository with a descriptive message about the changes.
+
+Example: git commit -m "Fixed bug in login feature"
+git push: Pushes your committed changes from your local repository to a remote repository (e.g., GitHub), making them available to others.
+
+Example: git push origin main (where origin is the name of the remote and main is the branch name)
